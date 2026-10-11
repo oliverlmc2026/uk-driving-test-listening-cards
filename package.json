@@ -1,0 +1,8 @@
+{
+  "name": "uk-road-test-listening-cards",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
