@@ -2,3 +2,45 @@ node_modules/
 .DS_Store
 .claude/settings.local.json
 *.log
+
+# --- added by gitignore-generator ---
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Temp
+*.tmp
+*.bak
+
+# Secrets (keep the example template)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+coverage/
+.nyc_output/
+
+# Python (dev-server.py)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
