@@ -3,6 +3,8 @@ import { createMastery } from './mastery.js';
 import { createSession } from './session.js';
 import { createSpeech } from './speech.js';
 import { browserEngine } from './speech-engine.js';
+import { audioEngine } from './audio-engine.js';
+import { audioManifest } from './audio-manifest.js';
 import { localStorageAdapter } from './storage.js';
 
 const app = document.getElementById('app');
@@ -10,7 +12,10 @@ const app = document.getElementById('app');
 const PROGRESS_KEY = 'progress';
 const SPEED_KEY = 'speed';
 
-const speech = createSpeech({ engine: browserEngine(), storage: localStorageAdapter(SPEED_KEY) });
+const speech = createSpeech({
+  engine: audioEngine({ manifest: audioManifest, fallback: browserEngine() }),
+  storage: localStorageAdapter(SPEED_KEY),
+});
 const mastery = createMastery({ cards, storage: localStorageAdapter(PROGRESS_KEY) });
 // 今個練習環節（一輪或者模擬路試）。規則全部喺 session 入面，畫面只負責畫同發聲。
 let session = null;
